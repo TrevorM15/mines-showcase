@@ -4,6 +4,7 @@ export const handler: Handlers = {
   async POST(req) {
     const form = await req.formData();
     const name = form.get("name")?.toString().trim();
+    const organization = form.get("organization")?.toString().trim() || undefined;
     const email = form.get("email")?.toString().trim().toLowerCase();
 
     const origin = new URL(req.url).origin;
@@ -30,6 +31,7 @@ export const handler: Handlers = {
 
     await kv.set(key, {
       name,
+      organization,
       email,
       createdAt: new Date().toISOString(),
     });
