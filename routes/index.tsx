@@ -2,6 +2,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 
 interface User {
   name: string;
+  organization?: string;
   email: string;
   createdAt: string;
 }
@@ -90,6 +91,15 @@ export default function Home({ data }: PageProps<Data>) {
                   name="name"
                   placeholder="Jane Smith"
                   required
+                />
+              </div>
+              <div class="field">
+                <label for="organization">Organization</label>
+                <input
+                  type="text"
+                  id="organization"
+                  name="organization"
+                  placeholder="Acme Corp"
                 />
               </div>
               <div class="field">

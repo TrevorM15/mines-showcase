@@ -2,6 +2,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 
 interface User {
   name: string;
+  organization?: string;
   email: string;
   createdAt: string;
 }
@@ -50,6 +51,7 @@ export const handler: Handlers<Data> = {
     if (action === "update") {
       const oldEmail = form.get("oldEmail")?.toString().trim().toLowerCase();
       const newName = form.get("name")?.toString().trim();
+      const newOrganization = form.get("organization")?.toString().trim() || undefined;
       const newEmail = form.get("email")?.toString().trim().toLowerCase();
 
       if (!oldEmail || !newName || !newEmail) {
@@ -84,6 +86,7 @@ export const handler: Handlers<Data> = {
 
       await kv.set(["users", newEmail], {
         name: newName,
+        organization: newOrganization,
         email: newEmail,
         createdAt: existing.value.createdAt,
       });
@@ -153,6 +156,7 @@ export default function ManagePage({ data }: PageProps<Data>) {
                     <tr>
                       <th>#</th>
                       <th>Name</th>
+                      <th>Organization</th>
                       <th>Email</th>
                       <th>Entered</th>
                       <th></th>
@@ -177,6 +181,13 @@ export default function ManagePage({ data }: PageProps<Data>) {
                                   class="edit-input"
                                 />
                                 <input
+                                  type="text"
+                                  name="organization"
+                                  value={u.organization ?? ""}
+                                  placeholder="Organization"
+                                  class="edit-input"
+                                />
+                                <input
                                   type="email"
                                   name="email"
                                   value={u.email}
@@ -197,6 +208,7 @@ export default function ManagePage({ data }: PageProps<Data>) {
                           <tr key={u.email}>
                             <td class="row-num">{i + 1}</td>
                             <td class="col-name">{u.name}</td>
+                            <td class="col-org">{u.organization ?? ""}</td>
                             <td class="col-email">{u.email}</td>
                             <td class="col-date">{formatDate(u.createdAt)}</td>
                             <td class="col-actions">
