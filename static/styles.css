@@ -33,23 +33,25 @@ body {
   width: 100%;
   background: #0D0D1A;
   border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 1.5rem 0.75rem;
 }
 
 .logo-img {
   display: block;
-  width: 100%;
-  height: auto;
+  height: 72px;
+  width: auto;
 }
 
 .tagline {
-  text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.35em;
   color: var(--text-muted);
-  padding: 0.6rem 0 0.85rem;
+  padding-top: 0.5rem;
   text-transform: uppercase;
-  background: #0D0D1A;
 }
 
 /* ── Main content ── */
@@ -248,6 +250,203 @@ button:active {
   font-size: 0.825rem;
   color: var(--text-muted);
   font-family: "Courier New", monospace;
+}
+
+/* ── Manage page ── */
+
+.main-wide {
+  max-width: 860px;
+  width: 100%;
+  margin: 2.5rem auto;
+  padding: 0 1.25rem;
+}
+
+.manage-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.manage-header h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.manage-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.back-link {
+  font-size: 0.825rem;
+  color: var(--text-subtle);
+  text-decoration: none;
+  padding-top: 0.2rem;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.no-pad {
+  padding: 0;
+  overflow: hidden;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-subtle);
+  font-size: 0.9rem;
+}
+
+.entry-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.entry-table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.entry-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.entry-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+
+.entry-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.entry-table tbody tr:hover {
+  background: var(--surface-2);
+}
+
+.entry-table td {
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+}
+
+.row-num {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  width: 2rem;
+}
+
+.col-name {
+  font-weight: 500;
+}
+
+.col-email {
+  color: var(--text-subtle);
+  font-family: "Courier New", monospace;
+  font-size: 0.825rem;
+}
+
+.col-date {
+  color: var(--text-muted);
+  font-size: 0.775rem;
+  white-space: nowrap;
+}
+
+.col-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn-edit {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--border-accent);
+  border-radius: 6px;
+  background: var(--accent-dim);
+  white-space: nowrap;
+}
+
+.btn-edit:hover {
+  background: rgba(0, 212, 200, 0.2);
+}
+
+.inline-form {
+  display: contents;
+}
+
+.btn-delete {
+  font-size: 0.775rem;
+  font-weight: 600;
+  width: auto;
+  padding: 0.3rem 0.65rem;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  margin-top: 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.btn-delete:hover {
+  background: rgba(239, 68, 68, 0.2);
+  box-shadow: none;
+}
+
+.edit-row {
+  background: var(--surface-2);
+}
+
+.edit-form {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.25rem 0;
+}
+
+.edit-input {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.875rem;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn-save {
+  width: auto;
+  padding: 0.45rem 1rem;
+  font-size: 0.825rem;
+  margin-top: 0;
+}
+
+.btn-cancel {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.btn-cancel:hover {
+  color: var(--text);
 }
 
 /* ── Winner page ── */

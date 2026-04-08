@@ -5,6 +5,7 @@
 import * as $_app from "./routes/_app.tsx";
 import * as $api_submit from "./routes/api/submit.ts";
 import * as $index from "./routes/index.tsx";
+import * as $manage from "./routes/manage.tsx";
 import * as $winner from "./routes/winner.tsx";
 
 import type { Manifest } from "$fresh/server.ts";
@@ -14,6 +15,7 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/api/submit.ts": $api_submit,
     "./routes/index.tsx": $index,
+    "./routes/manage.tsx": $manage,
     "./routes/winner.tsx": $winner,
   },
   islands: {},

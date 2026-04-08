@@ -60,10 +60,8 @@ export default function Home({ data }: PageProps<Data>) {
             <div class="card-header">
               <div class="card-icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00d4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="7" width="20" height="14" rx="2" />
-                  <path d="M16 7V5a2 2 0 0 0-4 0v2" />
-                  <line x1="12" y1="12" x2="12" y2="16" />
-                  <circle cx="12" cy="12" r="1" fill="#00d4c8" />
+                  <path d="M2 9a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a2 2 0 0 0 0 4v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a2 2 0 0 0 0-4V9z" />
+                  <line x1="9" y1="8" x2="9" y2="16" stroke-dasharray="2 2" />
                 </svg>
               </div>
               <div>
